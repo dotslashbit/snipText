@@ -2,6 +2,7 @@ package models
 
 import (
 	"database/sql"
+	"fmt"
 	"time"
 )
 
@@ -26,6 +27,7 @@ func (m *SnippetModel) Insert(title string, content string, expires int) (int, e
 	}
 	id, err := result.LastInsertId()
 	if err != nil {
+		fmt.Println("Error in lastInserId")
 		return 0, err
 	}
 	return int(id), nil

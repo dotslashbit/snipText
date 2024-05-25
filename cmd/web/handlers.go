@@ -59,6 +59,6 @@ func (app *application) snippetCreate(w http.ResponseWriter, r *http.Request) {
 		app.serverError(w, err)
 		return
 	}
-	http.Redirect(w, r, fmt.Sprintf("/snippet?id=%d", id), http.StatusSeeOther)
+	http.Redirect(w, r, fmt.Sprintf("/snippet/view?id=%d", id), http.StatusSeeOther)
 
 }
